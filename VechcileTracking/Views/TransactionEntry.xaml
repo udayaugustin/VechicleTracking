@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VechcileTracking.Views.TransactionEntry">
+    <StackLayout Orientation="Vertical" Spacing="10">
+        <Picker Title="Choose Vechicle" x:Name="VechicleSelector"/>
+
+        <Picker Title="Choose Customer" x:Name="CustomerSelector"/>
+
+        <Entry Placeholder="Work Place"  x:Name="WorkPlace"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Bucket"></Label>
+            <Entry Placeholder="Hours" x:Name="BucketHours"/>
+            <Entry Placeholder="Hours" x:Name="BucketRate"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Breaker"></Label>
+            <Entry Placeholder="Hours" x:Name="BreakerHours"/>
+            <Entry Placeholder="Hours" x:Name="BreakerRate"/>
+        </StackLayout>
+
+        <Entry Placeholder="Batta Amount" x:Name="BattaAmount" />
+
+        <Button Text="Save"/>
+    </StackLayout>
+</ContentPage>
