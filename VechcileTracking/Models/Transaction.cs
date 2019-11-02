@@ -28,6 +28,16 @@ namespace VechcileTracking
 
         public int BattaAmount { get; set; }
 
+        public DateTime RentDate { get; set; }
+
+        public string Date
+        {
+            get
+            {
+                return RentDate.ToShortDateString();
+            }
+        }
+
     }
 }
 

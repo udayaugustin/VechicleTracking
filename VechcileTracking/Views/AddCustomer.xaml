@@ -5,8 +5,10 @@
         <ToolbarItem Text="Add Transaction" Order="Secondary" Clicked="NaviagteToTransaction"/>
         <ToolbarItem Text="Add Customer" Order="Secondary" Clicked="NaviagteToAddCustomer"/>
         <ToolbarItem Text="Add Vehicle" Order="Secondary" Clicked="NaviagteToAddVechilce"/>
-        <ToolbarItem Text="Vehicle List" Order="Secondary" Clicked="NaviagteToVechicleList"/>
-        <ToolbarItem Text="Customer List" Order="Secondary" Clicked="NaviagteToCustomerList"/>        
+        <ToolbarItem Text="Vehicles" Order="Secondary" Clicked="NaviagteToVechicleList"/>
+        <ToolbarItem Text="Customers" Order="Secondary" Clicked="NaviagteToCustomerList"/>
+        <ToolbarItem Text="Update Payment" Order="Secondary" Clicked="NavigateToPaymentInfo"/>
+        <ToolbarItem Text="Reports" Order="Secondary" Clicked="NavigateToReports"/>
     </ContentPage.ToolbarItems>
     <StackLayout Orientation="Vertical">
         <Entry Placeholder="Name" x:Name="Name"/>

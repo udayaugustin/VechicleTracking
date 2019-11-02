@@ -15,7 +15,6 @@ namespace VechcileTracking.Views
 
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
 
-            connection.CreateTableAsync<Vechicle>();
         }
 
         private void Add(object sender, EventArgs e)

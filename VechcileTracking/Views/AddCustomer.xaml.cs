@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SQLite;
+using VechcileTracking.Models;
 using Xamarin.Forms;
 
 namespace VechcileTracking.Views
@@ -14,8 +15,13 @@ namespace VechcileTracking.Views
             InitializeComponent();
 
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
-
             connection.CreateTableAsync<Customer>();
+            connection.CreateTableAsync<Transaction>();
+            connection.CreateTableAsync<PaymentInfo>();
+            connection.CreateTableAsync<Vechicle>();
+            connection.CreateTableAsync<PaymentHistory>();
+
+
         }
 
         private void Add(object sender, EventArgs e)
@@ -57,6 +63,16 @@ namespace VechcileTracking.Views
         void NaviagteToVechicleList(object sender, EventArgs e)
         {
             Navigation.PushAsync(new VehicleList());
+        }
+
+        private void NavigateToPaymentInfo(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new UpdatePayment());
+        }
+
+        private void NavigateToReports(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Reports());
         }
     }
 }

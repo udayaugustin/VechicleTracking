@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VechcileTracking.Views.DetailedReport" Title="Detailed Report">
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="Rent History">
+        <StackLayout>
+                <Grid BackgroundColor="LightGray" Padding="5,10" HeightRequest="100">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Date" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="0"/>
+                <Label Text="Vehicle No" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1"/>
+                <Label Text="Hours" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="2"/>
+                <Label Text="Rate" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="3"/>
+                <Label Text="Batta" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="4"/>
+                </Grid>
+            <ListView x:Name="rentListView" SeparatorColor="Gray">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Date}" VerticalTextAlignment="Center" Grid.Column="0"/>
+                                <Label Text="{Binding VehicleNo}" VerticalTextAlignment="Center" Grid.Column="1"/>
+                                <Label Text="{Binding BreakerHours}" VerticalTextAlignment="Center" Grid.Column="2"/>
+                                <Label Text="{Binding BreakerRate}" VerticalTextAlignment="Center" Grid.Column="3"/>
+                                <Label Text="{Binding BattaAmount}" VerticalTextAlignment="Center" Grid.Column="4"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+       
+    </ContentPage>
+    <ContentPage Title="Payment History">
+        <StackLayout>
+            <Label x:Name="balanceLabel" FontAttributes="Bold" FontSize="Large"/>
+            <Grid BackgroundColor="LightGray" Padding="5,10" HeightRequest="100">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Paid Date" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="0"/>
+                <Label Text="Amount(Rs)" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1"/>
+            </Grid>
+            <ListView x:Name="paymentListView" SeparatorColor="Gray">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Date}" VerticalTextAlignment="Center" Grid.Column="0"/>
+                                <Label Text="{Binding PaidAmount}" VerticalTextAlignment="Center" Grid.Column="1"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+       
+    </ContentPage>
+</TabbedPage>
