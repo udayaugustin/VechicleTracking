@@ -33,5 +33,30 @@ namespace VechcileTracking.Views
 
             Navigation.PushAsync(new CustomerList());
         }
+
+        void NaviagteToAddCustomer(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddCustomer());
+        }
+
+        void NaviagteToAddVechilce(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddVehicle());
+        }
+
+        void NaviagteToTransaction(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TransactionEntry());
+        }
+
+        void NaviagteToCustomerList(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CustomerList());
+        }
+
+        void NaviagteToVechicleList(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new VehicleList());
+        }
     }
 }

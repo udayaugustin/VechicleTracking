@@ -11,7 +11,7 @@ namespace VechcileTracking
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new TransactionEntry());
+            MainPage = new NavigationPage(new AddCustomer());
         }
 
         protected override void OnStart()
