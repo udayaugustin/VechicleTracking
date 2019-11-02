@@ -36,7 +36,7 @@ namespace VechcileTracking.Views
             VechicleSelector.ItemDisplayBinding = new Binding("VechileNo");
         }
 
-        private void Save(object sender, EventArgs e)
+        private async void Save(object sender, EventArgs e)
         {
 
             if (_selectedVehicle == null || _selectedCustomer == null) return;
@@ -60,7 +60,7 @@ namespace VechcileTracking.Views
             if (_selectedCustomer == null) return;
 
             var paidInfo = connection.Table<PaymentInfo>().FirstOrDefaultAsync(o => o.CustomerId == _selectedCustomer.Id).Result;
-            var amount = Convert.ToInt32(BucketRate.Text) + Convert.ToInt32(BattaAmount.Text) + Convert.ToInt32(BreakerRate.Text);
+            var amount = (transaction.BucketRate * transaction.BucketHours) + transaction.BattaAmount + (transaction.BreakerRate*transaction.BreakerHours);
             var payment = new PaymentInfo
             {
                 CustomerId = _selectedCustomer.Id,
@@ -69,11 +69,13 @@ namespace VechcileTracking.Views
             };
 
             if (paidInfo == null)
-                connection.InsertAsync(payment);
+                await connection.InsertAsync(payment);
             else
-                connection.UpdateAsync(payment);
+                await connection.UpdateAsync(payment);
 
-            connection.InsertAsync(transaction);
+            await connection.InsertAsync(transaction);
+
+            await Navigation.PushAsync(new DetailedReport(transaction.CustomerId));
         }
 
         private void CustomerSelector_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,8 +83,6 @@ namespace VechcileTracking.Views
             var picker = (Picker)sender;
 
             _selectedCustomer = (Customer)picker.SelectedItem;
-
-
         }
 
         private void VechicleSelector_SelectedIndexChanged(object sender, EventArgs e)

@@ -38,6 +38,14 @@ namespace VechcileTracking
             }
         }
 
+        public int Total
+        {
+            get
+            {                
+                return (BucketRate * BucketHours) + (BreakerHours * BreakerRate) + BattaAmount; ;
+            }
+        }
+
     }
 }
 

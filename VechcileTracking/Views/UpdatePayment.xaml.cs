@@ -35,7 +35,7 @@ namespace VechcileTracking.Views
             CustomerSelector.ItemDisplayBinding = new Binding("Name");
         }
 
-        private void UpdatePayment_Clicked(object sender, EventArgs e)
+        private async void UpdatePayment_Clicked(object sender, EventArgs e)
         {
             try
             {
@@ -58,9 +58,11 @@ namespace VechcileTracking.Views
                 };
 
 
-                connection.UpdateAsync(payment);
+                await connection.UpdateAsync(payment);
 
-                connection.InsertAsync(paymentHistory);
+                await connection.InsertAsync(paymentHistory);
+
+                await Navigation.PushAsync(new DetailedReport(_selectedCustomer.Id));
 
                 //CustomerSelector.SelectedIndex = -1;
 

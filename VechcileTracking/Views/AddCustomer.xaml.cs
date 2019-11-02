@@ -20,8 +20,6 @@ namespace VechcileTracking.Views
             connection.CreateTableAsync<PaymentInfo>();
             connection.CreateTableAsync<Vechicle>();
             connection.CreateTableAsync<PaymentHistory>();
-
-
         }
 
         private void Add(object sender, EventArgs e)

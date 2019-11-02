@@ -1,10 +1,22 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" Title="Vehicles" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VechcileTracking.Views.VehicleList">
-   <ListView x:Name="listView">
-       <ListView.ItemTemplate>
-           <DataTemplate>
-               <TextCell Text="{Binding VechileNo}" Detail="{Binding OwnerNmae}"/>
-           </DataTemplate>
-       </ListView.ItemTemplate>       
-   </ListView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Transaction" Order="Secondary" Clicked="NaviagteToTransaction"/>
+        <ToolbarItem Text="Update Payment" Order="Secondary" Clicked="NavigateToPaymentInfo"/>
+        <ToolbarItem Text="Reports" Order="Secondary" Clicked="NavigateToReports"/>
+        <ToolbarItem Text="Add Customer" Order="Secondary" Clicked="NaviagteToAddCustomer"/>
+        <ToolbarItem Text="Add Vehicle" Order="Secondary" Clicked="NaviagteToAddVechilce"/>
+        <ToolbarItem Text="Vehicles List" Order="Secondary" Clicked="NaviagteToVechicleList"/>
+        <ToolbarItem Text="Customers List" Order="Secondary" Clicked="NaviagteToCustomerList"/>        
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+       <ListView x:Name="listView">
+           <ListView.ItemTemplate>
+               <DataTemplate>
+                   <TextCell Text="{Binding VechileNo}" Detail="{Binding OwnerNmae}"/>
+               </DataTemplate>
+           </ListView.ItemTemplate>       
+       </ListView>
+    </ContentPage.Content>
 </ContentPage>

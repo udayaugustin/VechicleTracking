@@ -48,7 +48,41 @@ namespace VechcileTracking.Views
             var picker = (Picker)sender;
 
             _selectedCustomer = (Customer)picker.SelectedItem;
+        }
 
+        void NaviagteToAddCustomer(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddCustomer());
+        }
+
+        void NaviagteToAddVechilce(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddVehicle());
+        }
+
+        void NaviagteToTransaction(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TransactionEntry());
+        }
+
+        void NaviagteToCustomerList(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CustomerList());
+        }
+
+        void NaviagteToVechicleList(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new VehicleList());
+        }
+
+        private void NavigateToPaymentInfo(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new UpdatePayment());
+        }
+
+        private void NavigateToReports(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Reports());
         }
     }
 }

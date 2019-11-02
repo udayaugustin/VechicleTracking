@@ -12,15 +12,16 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Text="Date" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="0"/>
                 <Label Text="Vehicle No" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1"/>
                 <Label Text="Hours" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="2"/>
                 <Label Text="Rate" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="3"/>
                 <Label Text="Batta" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="4"/>
+                <Label Text="Total" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="5"/>
                 </Grid>
             <ListView x:Name="rentListView" SeparatorColor="Gray">
-
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -34,9 +35,17 @@
                                 </Grid.ColumnDefinitions>
                                 <Label Text="{Binding Date}" VerticalTextAlignment="Center" Grid.Column="0"/>
                                 <Label Text="{Binding VehicleNo}" VerticalTextAlignment="Center" Grid.Column="1"/>
-                                <Label Text="{Binding BreakerHours}" VerticalTextAlignment="Center" Grid.Column="2"/>
-                                <Label Text="{Binding BreakerRate}" VerticalTextAlignment="Center" Grid.Column="3"/>
-                                <Label Text="{Binding BattaAmount}" VerticalTextAlignment="Center" Grid.Column="4"/>
+                                <StackLayout Grid.Column="2">
+                                    <Label Text="{Binding BreakerHours, StringFormat='BR H: {0}'}" VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding BucketHours, StringFormat='BT H: {0}'}" VerticalTextAlignment="Center"/>
+                                </StackLayout>
+
+                                <StackLayout Grid.Column="3">
+                                    <Label Text="{Binding BreakerRate, StringFormat='BR R: {0}'}" VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding BucketRate, StringFormat='BT R: {0}'}" VerticalTextAlignment="Center"/>
+                                </StackLayout>                                
+                                <Label Text="{Binding BattaAmount}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="4"/>
+                                <Label Text="{Binding Total}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="5"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
