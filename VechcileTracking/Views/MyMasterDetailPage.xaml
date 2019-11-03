@@ -11,7 +11,7 @@
               <ListView x:Name="listView" ItemTapped="ListView_ItemTapped">
                   <ListView.ItemTemplate>
                       <DataTemplate>
-                          <TextCell Text="{Binding Title}"/>
+                          <TextCell Text="{Binding Title}"/>        
                       </DataTemplate>
                   </ListView.ItemTemplate>
               </ListView>

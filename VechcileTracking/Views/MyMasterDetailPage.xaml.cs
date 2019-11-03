@@ -30,7 +30,8 @@ namespace VechcileTracking.Views
                 new MenuItem{ Title = "Add Customer"},
                 new MenuItem{ Title = "Add Vehicle"},
                 new MenuItem{ Title = "Vehicles List"},
-                new MenuItem{ Title = "Customers List"}
+                new MenuItem{ Title = "Customers List"},
+                new MenuItem{ Title = "Transaction List"}
             };
 
             listView.ItemsSource = menuList;
@@ -71,6 +72,10 @@ namespace VechcileTracking.Views
 
                 case "Customers List":
                     mainPage.Detail = new NavigationPage(new CustomerList());                    
+                    break;
+
+                case "Transaction List":
+                    mainPage.Detail = new NavigationPage(new TransactionList());
                     break;
             }
             mainPage.IsPresented = false;
