@@ -13,6 +13,12 @@ namespace VechcileTracking
             InitializeComponent();
 
             MainPage = new NavigationPage(new Reports());
+
+            var detailPage = new NavigationPage(new Reports());
+            MainPage = new MyMasterDetailPage();
+
+            var masterPage = MainPage as MasterDetailPage;
+            masterPage.Detail = detailPage;            
         }
 
         protected override void OnStart()

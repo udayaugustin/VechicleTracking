@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VechcileTracking.Models;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,14 +17,20 @@ namespace VechcileTracking.Views
         SQLiteAsyncConnection connection;
         List<PaymentHistory> paymentHistories;
         List<Transaction> transactions;
+        int customerId;
         public DetailedReport(int customerId)
         {
             InitializeComponent();
 
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            this.customerId = customerId;
+            GetData(customerId);            
+        }
 
-            GetData(customerId);
-
+        private async void Call(object sender, EventArgs e)
+        {
+            var customer = await connection.Table<Customer>().Where(c => c.Id == customerId).FirstOrDefaultAsync();
+            PhoneDialer.Open(customer.PhoneNo);
         }
 
         private void GetData(int customerId)

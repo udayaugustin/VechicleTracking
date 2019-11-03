@@ -3,6 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VechcileTracking.Views.DetailedReport" Title="Detailed Report">
   <!--Pages can be added as references or inline-->
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Call" Clicked="Call"                 
+                 Order="Primary"
+                 Priority="0" />
+    </TabbedPage.ToolbarItems>
     <ContentPage Title="Rent History">
         <StackLayout>
                 <Grid BackgroundColor="LightGray" Padding="5,10" HeightRequest="100">
@@ -21,7 +26,7 @@
                 <Label Text="Batta" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="4"/>
                 <Label Text="Total" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="5"/>
                 </Grid>
-            <ListView x:Name="rentListView" SeparatorColor="Gray">
+            <ListView x:Name="rentListView" SeparatorColor="Gray" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

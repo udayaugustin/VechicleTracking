@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" Title="Customers" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VechcileTracking.Views.CustomerList">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add Transaction" Order="Secondary" Clicked="NaviagteToTransaction"/>
-        <ToolbarItem Text="Update Payment" Order="Secondary" Clicked="NavigateToPaymentInfo"/>
-        <ToolbarItem Text="Reports" Order="Secondary" Clicked="NavigateToReports"/>
-        <ToolbarItem Text="Add Customer" Order="Secondary" Clicked="NaviagteToAddCustomer"/>
-        <ToolbarItem Text="Add Vehicle" Order="Secondary" Clicked="NaviagteToAddVechilce"/>
-        <ToolbarItem Text="Vehicles List" Order="Secondary" Clicked="NaviagteToVechicleList"/>
-        <ToolbarItem Text="Customers List" Order="Secondary" Clicked="NaviagteToCustomerList"/>        
-    </ContentPage.ToolbarItems>
-
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" Title="Customers" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VechcileTracking.Views.CustomerList">    
     <ContentPage.Content>
         <ListView x:Name="listView">
            <ListView.ItemTemplate>
