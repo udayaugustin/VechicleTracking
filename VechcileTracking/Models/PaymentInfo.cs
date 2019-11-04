@@ -11,6 +11,5 @@ namespace VechcileTracking.Models
         public int TotalAmount { get; set; }
 
         public int Settled { get; set; }
-
     }
 }

@@ -12,7 +12,7 @@ namespace VechcileTracking
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Reports());
+            //MainPage = new NavigationPage(new Reports());
 
             var detailPage = new NavigationPage(new Reports());
             MainPage = new MyMasterDetailPage();
