@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" Title="Transaction" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VechcileTracking.Views.TransactionEntry">
     <ScrollView>
-    <StackLayout Orientation="Vertical" Spacing="10">
+    <StackLayout Orientation="Vertical" Spacing="10" Padding="10">
         <Picker Title="Choose Vechicle" x:Name="VechicleSelector" SelectedIndexChanged="VechicleSelector_SelectedIndexChanged"/>
 
         <Picker Title="Choose Customer" x:Name="CustomerSelector" SelectedIndexChanged="CustomerSelector_SelectedIndexChanged"/>
@@ -11,13 +11,13 @@
         <StackLayout Orientation="Horizontal" Spacing="15">
             <Label VerticalOptions="Center" Text="Bucket"></Label>
             <Entry VerticalOptions="Center" Placeholder="Hours" x:Name="BucketHours"/>
-            <Entry VerticalOptions="Center" Placeholder="Rate" x:Name="BucketRate"/>
+            <Entry VerticalOptions="Center" Placeholder="Rate per hour" x:Name="BucketRate" WidthRequest="150"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" Spacing="15">
             <Label VerticalOptions="Center" Text="Breaker"></Label>
             <Entry VerticalOptions="Center" Placeholder="Hours" x:Name="BreakerHours"/>
-            <Entry VerticalOptions="Center" Placeholder="Rate" x:Name="BreakerRate"/>
+            <Entry VerticalOptions="Center" Placeholder="Rate per hour" x:Name="BreakerRate" WidthRequest="150"/>
         </StackLayout>
 
         <Entry Placeholder="Batta Amount" x:Name="BattaAmount" />

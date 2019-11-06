@@ -14,15 +14,10 @@ namespace VechcileTracking.Views
         {
             InitializeComponent();
 
-            connection = DependencyService.Get<ISQLiteDb>().GetConnection();
-            connection.CreateTableAsync<Customer>();
-            connection.CreateTableAsync<Transaction>();
-            connection.CreateTableAsync<PaymentInfo>();
-            connection.CreateTableAsync<Vechicle>();
-            connection.CreateTableAsync<PaymentHistory>();
+            connection = DependencyService.Get<ISQLiteDb>().GetConnection();            
         }
 
-        private void Add(object sender, EventArgs e)
+        private async void Add(object sender, EventArgs e)
         {
             var name = Name.Text;
             var phoneNo = PhoneNo.Text;
@@ -33,9 +28,10 @@ namespace VechcileTracking.Views
                 PhoneNo = phoneNo
             };
 
-            connection.InsertAsync(customer);
+            await connection.InsertAsync(customer);
 
-            Navigation.PushAsync(new CustomerList());
+            var mainPage = Application.Current.MainPage as MasterDetailPage;
+            mainPage.Detail = new NavigationPage(new CustomerList());            
         }        
     }
 }

@@ -75,7 +75,8 @@ namespace VechcileTracking.Views
 
             await connection.InsertAsync(transaction);
 
-            await Navigation.PushAsync(new DetailedReport(transaction.CustomerId));
+            var mainPage = Application.Current.MainPage as MasterDetailPage;
+            mainPage.Detail = new NavigationPage(new DetailedReport(transaction.CustomerId));            
         }
 
         private void CustomerSelector_SelectedIndexChanged(object sender, EventArgs e)

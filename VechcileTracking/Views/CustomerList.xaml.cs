@@ -25,6 +25,7 @@ namespace VechcileTracking.Views
             customerList = await connection.Table<Customer>().ToListAsync();
             listView.ItemsSource = customerList;
         }
+
         private void Edit_clicked(object sender, EventArgs e)
         {
             var editmenuItem = sender as Xamarin.Forms.MenuItem;
@@ -37,10 +38,9 @@ namespace VechcileTracking.Views
                 {
                     Navigation.PushAsync(new EditCustomer(customer));
                 }
-            }
-
-            
+            }            
         }
+
         private async void Delete_clicked(object sender, EventArgs e)
         {
             var deletemenuItem = sender as Xamarin.Forms.MenuItem;
@@ -51,7 +51,6 @@ namespace VechcileTracking.Views
 
                 if (customer != null)
                 {
-
                     await connection.DeleteAsync(customer);
                 }
             }
