@@ -3,7 +3,7 @@
              Title="Pending Amount" Padding="10">
     <ContentPage.Content>
         <StackLayout>
-            <Label FontSize="24" x:Name="TotalPendingAmount"/>
+            <Label FontSize="16" x:Name="TotalPendingAmount"/>
             <Grid BackgroundColor="LightGray" Padding="5,10" HeightRequest="100">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
