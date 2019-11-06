@@ -17,7 +17,7 @@ namespace VechcileTracking.Views
 
         }
 
-        private void Add(object sender, EventArgs e)
+        private async void Add(object sender, EventArgs e)
         {
             var vehicleNo = VehcileNo.Text;
             var ownerName = OwnerName.Text;
@@ -28,9 +28,10 @@ namespace VechcileTracking.Views
                 OwnerName = ownerName
             };
 
-            connection.InsertAsync(vehicle);
+            await connection.InsertAsync(vehicle);
 
-            Navigation.PushAsync(new VehicleList());
+            var mainPage = Application.Current.MainPage as MasterDetailPage;
+            mainPage.Detail = new NavigationPage(new VehicleList());            
         }
     }
 }

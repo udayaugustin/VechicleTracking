@@ -4,8 +4,13 @@
         <ListView x:Name="listView">
            <ListView.ItemTemplate>
                <DataTemplate>
-                   <TextCell Text="{Binding Name}" Detail="{Binding PhoneNo}"/>
-               </DataTemplate>
+                   <TextCell Text="{Binding Name}" Detail="{Binding PhoneNo}">
+                    <TextCell.ContextActions>
+                        <MenuItem Text="Edit" Clicked="Edit_clicked"></MenuItem>
+                        <MenuItem Text="Delete" Clicked="Delete_clicked"></MenuItem>
+                    </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
            </ListView.ItemTemplate>       
         </ListView>
     </ContentPage.Content>

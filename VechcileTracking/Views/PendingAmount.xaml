@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VechcileTracking.Views.PendingAmount"
+             Title="Pending Amount" Padding="10">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label FontSize="16" x:Name="TotalPendingAmount"/>
+            <Grid BackgroundColor="LightGray" Padding="5,10" HeightRequest="100">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>                    
+                </Grid.ColumnDefinitions>
+                <Label Text="Customer Name" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="0"/>
+                <Label Text="Pending Amount" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1"/>
+                <Label Text="Phone No" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="2"/>
+            </Grid>
+
+            <ListView x:Name="PendingListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>                                    
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Customer.Name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="0"/>
+                                <Label Text="{Binding Amount}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="1"/>
+                                <Button Text="Call" Command="{Binding Command}" CommandParameter="{Binding .}" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="2"></Button>
+                                
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

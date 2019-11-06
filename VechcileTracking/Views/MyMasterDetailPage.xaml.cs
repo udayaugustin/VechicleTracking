@@ -26,6 +26,7 @@ namespace VechcileTracking.Views
             {
                 new MenuItem{ Title = "Add Transaction"},
                 new MenuItem{ Title = "Update Payment"},
+                new MenuItem{ Title = "Pending Amount List"},
                 new MenuItem{ Title = "Reports"},
                 new MenuItem{ Title = "Add Customer"},
                 new MenuItem{ Title = "Add Vehicle"},
@@ -53,6 +54,10 @@ namespace VechcileTracking.Views
 
                 case "Update Payment":
                     mainPage.Detail = new NavigationPage(new UpdatePayment());                    
+                    break;
+
+                case "Pending Amount List":
+                    mainPage.Detail = new NavigationPage(new PendingAmount());
                     break;
 
                 case "Reports":
