@@ -65,9 +65,20 @@ namespace VechcileTracking.Views
             }
         }
 
-        private void Delete_Clicked(object sender, EventArgs e)
+        private async void Delete_Clicked(object sender, EventArgs e)
         {
+            var deletemenuItem = sender as Xamarin.Forms.MenuItem;
 
+            if (deletemenuItem != null)
+            {
+                var transaction = deletemenuItem.BindingContext as Transaction;
+
+                if (transaction != null)
+                {
+                    await connection.DeleteAsync(transaction);
+                   
+                }
+            }
         }
     }
 }

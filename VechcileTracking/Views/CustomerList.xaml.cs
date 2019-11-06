@@ -24,6 +24,39 @@ namespace VechcileTracking.Views
             customerList = new List<Customer>();
             customerList = await connection.Table<Customer>().ToListAsync();
             listView.ItemsSource = customerList;
-        }        
+        }
+        private void Edit_clicked(object sender, EventArgs e)
+        {
+            var editmenuItem = sender as Xamarin.Forms.MenuItem;
+
+            if (editmenuItem != null)
+            {
+                var customer = editmenuItem.BindingContext as Customer;
+
+                if (customer != null)
+                {
+                    Navigation.PushAsync(new EditCustomer(customer));
+                }
+            }
+
+            
+        }
+        private async void Delete_clicked(object sender, EventArgs e)
+        {
+            var deletemenuItem = sender as Xamarin.Forms.MenuItem;
+
+            if (deletemenuItem != null)
+            {
+                var customer = deletemenuItem.BindingContext as Customer;
+
+                if (customer != null)
+                {
+
+                    await connection.DeleteAsync(customer);
+                }
+            }
+
+        }
+
     }
 }
