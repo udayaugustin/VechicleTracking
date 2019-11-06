@@ -31,7 +31,8 @@ namespace VechcileTracking.Views
                 new MenuItem{ Title = "Add Vehicle"},
                 new MenuItem{ Title = "Vehicles List"},
                 new MenuItem{ Title = "Customers List"},
-                new MenuItem{ Title = "Transaction List"}
+                new MenuItem{ Title = "Transaction List"},
+                new MenuItem{ Title = "Sync Data"}
             };
 
             listView.ItemsSource = menuList;
@@ -76,6 +77,10 @@ namespace VechcileTracking.Views
 
                 case "Transaction List":
                     mainPage.Detail = new NavigationPage(new TransactionList());
+                    break;
+
+                case "Sync Data":
+                    mainPage.Detail = new NavigationPage(new SyncData());
                     break;
             }
             mainPage.IsPresented = false;

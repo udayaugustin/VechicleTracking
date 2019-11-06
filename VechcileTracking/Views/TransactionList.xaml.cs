@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using VechcileTracking.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,7 +15,7 @@ namespace VechcileTracking.Views
 	{
         SQLiteAsyncConnection connection;
         List<Customer> customerList;
-
+        Customer _selectedCustomer;
 
         public TransactionList()
 		{
@@ -38,15 +38,20 @@ namespace VechcileTracking.Views
         {
             var picker = (Picker)sender;
 
-            var selectedCustomer = (Customer)picker.SelectedItem;
+            _selectedCustomer = (Customer)picker.SelectedItem;
 
+            RefreshTransactionList();
+        }
+
+        private void RefreshTransactionList()
+        {
             var trans = connection.Table<Transaction>().ToListAsync().Result;
             var transactions = new List<Transaction>();
             if (trans != null)
-                transactions = trans.Where(p => p.CustomerId == selectedCustomer.Id).OrderByDescending(o => o.RentDate).ToList();
-          
-                headerGrid.IsVisible = !(transactions.Count == 0);
-            
+                transactions = trans.Where(p => p.CustomerId == _selectedCustomer.Id).OrderByDescending(o => o.RentDate).ToList();
+
+            headerGrid.IsVisible = !(transactions.Count == 0);
+
             rentListView.ItemsSource = transactions;
         }
 
@@ -67,7 +72,30 @@ namespace VechcileTracking.Views
 
         private void Delete_Clicked(object sender, EventArgs e)
         {
+            var editmenuItem = sender as Xamarin.Forms.MenuItem;
 
+            if (editmenuItem != null)
+            {
+                var transaction = editmenuItem.BindingContext as Transaction;
+
+                if (transaction != null)
+                {
+                    connection.DeleteAsync(transaction);
+
+                    var paidInfo = connection.Table<PaymentInfo>().FirstOrDefaultAsync(o => o.CustomerId == _selectedCustomer.Id).Result;
+
+                    var amount = (transaction.BucketRate * transaction.BucketHours) + transaction.BattaAmount + (transaction.BreakerRate * transaction.BreakerHours);
+
+                    if (paidInfo != null)
+                    {
+                        paidInfo.TotalAmount = paidInfo.TotalAmount - amount;
+
+                        connection.UpdateAsync(paidInfo);
+                    }
+
+                    RefreshTransactionList();
+                }
+            }
         }
     }
 }
