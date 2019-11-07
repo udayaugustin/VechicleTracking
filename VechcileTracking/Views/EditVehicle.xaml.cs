@@ -36,6 +36,8 @@ namespace VechcileTracking.Views
             _selectedVechicle.VechileNo = VehcileNo.Text;
             _selectedVechicle.OwnerName = OwnerName.Text;
             await connection.UpdateAsync(_selectedVechicle);
+            var mainPage = Application.Current.MainPage as MasterDetailPage;
+            mainPage.Detail = new NavigationPage(new VehicleList());
         }
     }
 }
