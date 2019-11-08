@@ -36,7 +36,8 @@ namespace VechcileTracking.Views
             _selectedCustomer.Name = Name.Text;
             _selectedCustomer.PhoneNo = PhoneNo.Text;
             await connection.UpdateAsync(_selectedCustomer);
-
+            var mainPage = Application.Current.MainPage as MasterDetailPage;
+            mainPage.Detail = new NavigationPage(new CustomerList());
         }
     }
 }
