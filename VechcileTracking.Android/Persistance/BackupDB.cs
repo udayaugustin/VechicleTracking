@@ -23,7 +23,7 @@ namespace VechcileTracking.Droid.Persistance
     {
         public string SyncDB()
         {
-            string PureFileName = string.Format("vehicle_tracking_{0}_{1}_{2}.db3",DateTime.Now.Date.Day,DateTime.Now.Month,DateTime.Now.Year);
+            string PureFileName = string.Format("vehicle_tracking_{0}_{1}_{2}_{3}.db3",DateTime.Now.Date.Day,DateTime.Now.Month,DateTime.Now.Year,DateTime.Now.Ticks);
             String uploadUrl = String.Format("{0}/{1}", "ftp://oywm4egm0p6k@43.255.154.9/var/www/codevmedia/vehicle-tracking", PureFileName);
             FtpWebRequest req = (FtpWebRequest)FtpWebRequest.Create(uploadUrl);
             req.Proxy = null;
