@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" Title="Transaction" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VechcileTracking.Views.TransactionEntry">
+    <NavigationPage.TitleView>
+        <Label Text="Transaction Entry" Style="{StaticResource NavigationTitle}"/>
+    </NavigationPage.TitleView>
     <ScrollView>
     <StackLayout Orientation="Vertical" Spacing="10" Padding="10">
         <Picker Title="Choose Vechicle" x:Name="VechicleSelector" SelectedIndexChanged="VechicleSelector_SelectedIndexChanged"/>

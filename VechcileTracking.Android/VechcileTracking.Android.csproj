@@ -70,6 +70,10 @@
     <Compile Include="Persistance\SQLiteDb.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\Proxima-Nova-Semibold.otf" />
+    <AndroidAsset Include="Assets\Proxima-nova-bold.ttf" />
+    <AndroidAsset Include="Assets\Proxima-Nova-Light.otf" />
+    <AndroidAsset Include="Assets\Proxima-nova-regular.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

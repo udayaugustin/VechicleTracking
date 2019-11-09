@@ -7,3 +7,5 @@
 /VechcileTracking/bin/Debug/netstandard2.0
 /VechcileTracking.iOS/obj
 /VechcileTracking.Android
+/VechcileTracking/bin/Release/netstandard2.0
+/VechcileTracking.iOS/bin/iPhoneSimulator/Release

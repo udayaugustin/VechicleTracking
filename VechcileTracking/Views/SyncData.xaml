@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" Title="Sync Data"
              x:Class="VechcileTracking.Views.SyncData">
-    <ContentPage.Content>
-        <StackLayout>
-            <Button Text="Start Sync" Clicked="Sync_Clicked"/>
-        </StackLayout>
-    </ContentPage.Content>
+    <NavigationPage.TitleView>
+        <Label Text="Sync Data" Style="{StaticResource NavigationTitle}"/>
+    </NavigationPage.TitleView>
+    <StackLayout>
+        <Button Text="Start Sync" Clicked="Sync_Clicked"/>
+    </StackLayout>
 </ContentPage>

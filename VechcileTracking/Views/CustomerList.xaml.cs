@@ -26,6 +26,15 @@ namespace VechcileTracking.Views
             listView.ItemsSource = customerList;
         }
 
+        private void RefreshCustomerList()
+        {
+            var custom = connection.Table<Customer>().ToListAsync().Result;
+            var customers = new List<Customer>();
+            if (custom != null)
+            listView.ItemsSource = customers;
+        }
+
+
         private void Edit_clicked(object sender, EventArgs e)
         {
             var editmenuItem = sender as Xamarin.Forms.MenuItem;
@@ -52,7 +61,9 @@ namespace VechcileTracking.Views
                 if (customer != null)
                 {
                     await connection.DeleteAsync(customer);
+                   
                 }
+                RefreshCustomerList();
             }
 
         }

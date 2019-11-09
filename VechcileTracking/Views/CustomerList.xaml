@@ -1,17 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" Title="Customers" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VechcileTracking.Views.CustomerList">    
-    <ContentPage.Content>
-        <ListView x:Name="listView">
-           <ListView.ItemTemplate>
-               <DataTemplate>
-                   <TextCell Text="{Binding Name}" Detail="{Binding PhoneNo}">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" Title="Customers" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VechcileTracking.Views.CustomerList">
+    <NavigationPage.TitleView>
+            <Label Text="Customer List" Style="{StaticResource NavigationTitle}"/>
+        </NavigationPage.TitleView>
+
+    <ListView x:Name="listView">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Name}" Detail="{Binding PhoneNo}">
                     <TextCell.ContextActions>
                         <MenuItem Text="Edit" Clicked="Edit_clicked"></MenuItem>
                         <MenuItem Text="Delete" Clicked="Delete_clicked"></MenuItem>
                     </TextCell.ContextActions>
-                    </TextCell>
-                </DataTemplate>
-           </ListView.ItemTemplate>       
-        </ListView>
-    </ContentPage.Content>
+                </TextCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

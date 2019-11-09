@@ -11,8 +11,10 @@
               <ListView x:Name="listView" ItemTapped="ListView_ItemTapped">
                   <ListView.ItemTemplate>
                       <DataTemplate>
-                          <TextCell Text="{Binding Title}"/>        
-                      </DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding Title}" Margin="10" FontSize="18"/>
+                            </ViewCell>
+                        </DataTemplate>
                   </ListView.ItemTemplate>
               </ListView>
         </StackLayout>
