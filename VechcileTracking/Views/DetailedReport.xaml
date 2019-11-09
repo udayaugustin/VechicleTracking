@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="VechcileTracking.Views.DetailedReport" >
+             x:Class="VechcileTracking.Views.DetailedReport" Padding="10">
     <NavigationPage.TitleView>
         <Label Text="Detailed Report" Style="{StaticResource NavigationTitle}"/>
     </NavigationPage.TitleView>
+  <!--Pages can be added as references or inline-->
 
-    <!--Pages can be added as references or inline-->
     <TabbedPage.ToolbarItems>
         <ToolbarItem Text="Call" Clicked="Call"                 
                  Order="Primary"
@@ -71,8 +71,8 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Label Text="Paid Date" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="0"/>
-                <Label Text="Amount(Rs)" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1"/>
+                <Label Text="Paid Date" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontAttributes="Bold" Grid.Column="0"/>
+                <Label Text="Amount(Rs)" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontAttributes="Bold" Grid.Column="1"/>
             </Grid>
             <ListView x:Name="paymentListView" SeparatorColor="Gray">
 

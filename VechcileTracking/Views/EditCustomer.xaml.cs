@@ -31,11 +31,13 @@ namespace VechcileTracking.Views
             Name.Text = customer.Name.ToString();
             PhoneNo.Text = customer.PhoneNo.ToString();
         }
+
         private async void Save(object sender, EventArgs e)
         {
             _selectedCustomer.Name = Name.Text;
             _selectedCustomer.PhoneNo = PhoneNo.Text;
             await connection.UpdateAsync(_selectedCustomer);
+
             var mainPage = Application.Current.MainPage as MasterDetailPage;
             mainPage.Detail = new NavigationPage(new CustomerList());
         }

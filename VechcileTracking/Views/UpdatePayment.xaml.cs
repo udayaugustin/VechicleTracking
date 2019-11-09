@@ -62,8 +62,9 @@ namespace VechcileTracking.Views
 
                 await connection.InsertAsync(paymentHistory);
 
-                await Navigation.PushAsync(new DetailedReport(_selectedCustomer.Id));
-
+                var mainPage = Application.Current.MainPage as MasterDetailPage;
+                mainPage.Detail = new NavigationPage(new DetailedReport(_selectedCustomer.Id));
+                
                 //CustomerSelector.SelectedIndex = -1;
 
                 //amountEntry.Text = string.Empty;
