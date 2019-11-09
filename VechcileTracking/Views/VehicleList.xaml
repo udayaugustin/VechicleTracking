@@ -6,12 +6,24 @@
     <ListView x:Name="listView">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding VechileNo}" Detail="{Binding OwnerNmae}">
-                    <TextCell.ContextActions>
+                <ViewCell>
+                    <ViewCell.ContextActions>
                         <MenuItem Text="Edit" Clicked="Edit_Clicked"></MenuItem>
                         <MenuItem Text="Delete" Clicked="Delete_Clicked"></MenuItem>
-                    </TextCell.ContextActions>
-                </TextCell>
+                    </ViewCell.ContextActions>
+                    <Grid Padding="10,0,0,0" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding VechileNo}" Grid.Row="0"  FontSize="20" Grid.Column="0" VerticalOptions="Center" />
+                        <Label Text="{Binding OwnerName}" Grid.Row="1" Grid.Column="0" FontSize="20" VerticalOptions="Start" />
+                    </Grid>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
