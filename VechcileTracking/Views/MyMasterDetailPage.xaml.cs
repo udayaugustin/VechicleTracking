@@ -31,13 +31,9 @@ namespace VechcileTracking.Views
                 new MenuItem{ Title = "Add Customer"},
                 new MenuItem{ Title = "Add Vehicle"},
                 new MenuItem{ Title = "Vehicles List"},
-                new MenuItem{ Title = "Customers List"},
-<<<<<<< HEAD
-                new MenuItem{ Title = "Transaction List"},
-                new MenuItem{ Title = "Sync Data"}
-=======
+                new MenuItem{ Title = "Customers List"},                
+                new MenuItem{ Title = "Sync Data"},
                 new MenuItem{ Title = "Site Work List"}
->>>>>>> e5f6913... Naviagtion style is updated
             };
 
             listView.ItemsSource = menuList;            

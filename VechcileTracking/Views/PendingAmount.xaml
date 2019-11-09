@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VechcileTracking.Views.PendingAmount" Padding="10">
     <NavigationPage.TitleView>
-        <Label Text="Pending Amount" Style="{StaticResource NavigationTitle}"/>
+        <Label Text="Balance Cash List" Style="{StaticResource NavigationTitle}"/>
     </NavigationPage.TitleView>
     <StackLayout>
         <Label FontSize="16" x:Name="TotalPendingAmount"/>
@@ -16,24 +15,6 @@
             <Label Text="Pending Amount" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1"/>
             <Label Text="Phone No" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="2"/>
         </Grid>
-=======
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VechcileTracking.Views.PendingAmount"
-             Title="Balance Cash List" Padding="10">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label FontSize="16" x:Name="TotalPendingAmount"/>
-            <Grid BackgroundColor="LightGray" Padding="5,10" HeightRequest="100">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>                    
-                </Grid.ColumnDefinitions>
-                <Label Text="Customer Name" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="0"/>
-                <Label Text="Pending Amount" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1"/>
-                <Label Text="Phone No" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="2"/>
-            </Grid>
->>>>>>> e5f6913... Naviagtion style is updated
-
         <ListView x:Name="PendingListView">
             <ListView.ItemTemplate>
                 <DataTemplate>

@@ -70,23 +70,17 @@ namespace VechcileTracking.Views
             }
         }
 
-        private void Delete_Clicked(object sender, EventArgs e)
+        private async void Delete_Clicked(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             var editmenuItem = sender as Xamarin.Forms.MenuItem;
-=======
             var deletemenuItem = sender as Xamarin.Forms.MenuItem;            
->>>>>>> e5f6913... Naviagtion style is updated
 
             if (editmenuItem != null)
             {
                 var transaction = editmenuItem.BindingContext as Transaction;
 
                 if (transaction != null)
-                {
-<<<<<<< HEAD
-                    connection.DeleteAsync(transaction);
-
+                {                    
                     var paidInfo = connection.Table<PaymentInfo>().FirstOrDefaultAsync(o => o.CustomerId == _selectedCustomer.Id).Result;
 
                     var amount = (transaction.BucketRate * transaction.BucketHours) + transaction.BattaAmount + (transaction.BreakerRate * transaction.BreakerHours);
@@ -95,19 +89,16 @@ namespace VechcileTracking.Views
                     {
                         paidInfo.TotalAmount = paidInfo.TotalAmount - amount;
 
-                        connection.UpdateAsync(paidInfo);
+                        await connection.UpdateAsync(paidInfo);
                     }
 
                     RefreshTransactionList();
                 }
-=======
-                    await connection.DeleteAsync(transaction);
+                await connection.DeleteAsync(transaction);
 
-                    var mainPage = Application.Current.MainPage as MasterDetailPage;
-                    mainPage.Detail = new NavigationPage(new TransactionList());
-                }                
->>>>>>> e5f6913... Naviagtion style is updated
+                var mainPage = Application.Current.MainPage as MasterDetailPage;
+                mainPage.Detail = new NavigationPage(new TransactionList());
             }
-        }
+        }        
     }
 }

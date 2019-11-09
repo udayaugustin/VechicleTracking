@@ -1,18 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-<<<<<<< HEAD
              x:Class="VechcileTracking.Views.UpdatePayment">
     <NavigationPage.TitleView>
-        <Label Text="Payment Update" Style="{StaticResource NavigationTitle}"/>
+        <Label Text="Received Cash" Style="{StaticResource NavigationTitle}"/>
     </NavigationPage.TitleView>
     <StackLayout Orientation="Vertical" Spacing="10">
-=======
-             x:Class="VechcileTracking.Views.UpdatePayment" Title="Received Cash">
-    <ContentPage.Content>
-        <StackLayout Orientation="Vertical" Spacing="10">
->>>>>>> e5f6913... Naviagtion style is updated
-
             <Picker Title="Choose Customer" SelectedIndexChanged="CustomerSelector_SelectedIndexChanged" x:Name="CustomerSelector"/>
 
             <Entry Placeholder="Amount" x:Name="amountEntry" />
@@ -23,5 +16,5 @@
             </StackLayout>
 
             <Button Text="Update" Clicked="UpdatePayment_Clicked"/>
-        </StackLayout>
+    </StackLayout>
 </ContentPage>
