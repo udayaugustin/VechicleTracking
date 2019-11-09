@@ -69,10 +69,7 @@ namespace VechcileTracking.Views
             _currenttransaction.VechilceId = _selectedVehicle.Id;
             _currenttransaction.VehicleNo = _selectedVehicle.VechileNo;
             _currenttransaction.Workplace = WorkPlace.Text;
-            _currenttransaction.RentDate = rentDate.Date;
-                
-
-            
+            _currenttransaction.RentDate = rentDate.Date;                            
 
             if (_selectedCustomer == null) return;
 
@@ -99,6 +96,8 @@ namespace VechcileTracking.Views
 
             await connection.UpdateAsync(_currenttransaction);
 
+            var mainPage = Application.Current.MainPage as MasterDetailPage;
+            mainPage.Detail = new NavigationPage(new TransactionList());
         }
 
         private void CustomerSelector_SelectedIndexChanged(object sender, EventArgs e)

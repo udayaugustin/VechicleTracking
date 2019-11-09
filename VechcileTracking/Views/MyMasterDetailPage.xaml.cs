@@ -24,21 +24,23 @@ namespace VechcileTracking.Views
         {
             var menuList = new List<MenuItem>
             {
-                new MenuItem{ Title = "Add Transaction"},
-                new MenuItem{ Title = "Update Payment"},
-                new MenuItem{ Title = "Pending Amount List"},
+                new MenuItem{ Title = "Add Site Work"},
+                new MenuItem{ Title = "Received Cash"},
+                new MenuItem{ Title = "Balance Cash List"},
                 new MenuItem{ Title = "Reports"},
                 new MenuItem{ Title = "Add Customer"},
                 new MenuItem{ Title = "Add Vehicle"},
                 new MenuItem{ Title = "Vehicles List"},
                 new MenuItem{ Title = "Customers List"},
+<<<<<<< HEAD
                 new MenuItem{ Title = "Transaction List"},
                 new MenuItem{ Title = "Sync Data"}
+=======
+                new MenuItem{ Title = "Site Work List"}
+>>>>>>> e5f6913... Naviagtion style is updated
             };
 
-            listView.ItemsSource = menuList;
-
-            
+            listView.ItemsSource = menuList;            
         }
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -48,15 +50,15 @@ namespace VechcileTracking.Views
             var menu = e.Item as MenuItem;
             switch (menu.Title)
             {
-                case "Add Transaction":
+                case "Add Site Work":
                     mainPage.Detail = new NavigationPage(new TransactionEntry());                    
                     break;
 
-                case "Update Payment":
+                case "Received Cash":
                     mainPage.Detail = new NavigationPage(new UpdatePayment());                    
                     break;
 
-                case "Pending Amount List":
+                case "Balance Cash List":
                     mainPage.Detail = new NavigationPage(new PendingAmount());
                     break;
 
@@ -80,7 +82,7 @@ namespace VechcileTracking.Views
                     mainPage.Detail = new NavigationPage(new CustomerList());                    
                     break;
 
-                case "Transaction List":
+                case "Site Work List":
                     mainPage.Detail = new NavigationPage(new TransactionList());
                     break;
 
