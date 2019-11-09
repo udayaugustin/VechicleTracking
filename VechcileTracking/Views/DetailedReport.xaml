@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="VechcileTracking.Views.DetailedReport" Padding="10">
+             x:Class="VechcileTracking.Views.DetailedReport">
     <NavigationPage.TitleView>
         <Label Text="Detailed Report" Style="{StaticResource NavigationTitle}"/>
     </NavigationPage.TitleView>
@@ -12,49 +12,47 @@
                  Order="Primary"
                  Priority="0" />
     </TabbedPage.ToolbarItems>
-    <ContentPage Title="Rental History">
+    <ContentPage Title="Rental History" Padding="10">
         <StackLayout>
-                <Grid BackgroundColor="LightGray" Padding="5,10" HeightRequest="100">
+                <Grid BackgroundColor="LightGray" Padding="5,10" HeightRequest="76">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="Date" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="0"/>
-                <Label Text="Vehicle No" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1"/>
-                <Label Text="Hours" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="2"/>
-                <Label Text="Rate" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="3"/>
-                <Label Text="Batta" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="4"/>
-                <Label Text="Total" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="5"/>
+                    <Label Text="Date" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontAttributes="Bold" Grid.Column="0"/>
+                <Label Text="Vehicle No" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontAttributes="Bold" Grid.Column="1"/>
+                <Label Text="Hours" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontAttributes="Bold" Grid.Column="2"/>
+                <Label Text="Rate" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontAttributes="Bold" Grid.Column="3"/>
+                <Label Text="Total" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontAttributes="Bold" Grid.Column="4"/>
                 </Grid>
             <ListView x:Name="rentListView" SeparatorColor="Gray" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid>
+                            <Grid Padding="5,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>                                    
                                 </Grid.ColumnDefinitions>
                                 <Label Text="{Binding Date}" VerticalTextAlignment="Center" Grid.Column="0"/>
                                 <Label Text="{Binding VehicleNo}" VerticalTextAlignment="Center" Grid.Column="1"/>
                                 <StackLayout Grid.Column="2">
-                                    <Label Text="{Binding BreakerHours, StringFormat='BR H: {0}'}" VerticalTextAlignment="Center"/>
-                                    <Label Text="{Binding BucketHours, StringFormat='BT H: {0}'}" VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding BreakerHours, StringFormat='BR H: {0}'}" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding BucketHours, StringFormat='BT H: {0}'}" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
                                 </StackLayout>
 
                                 <StackLayout Grid.Column="3">
-                                    <Label Text="{Binding BreakerRate, StringFormat='BR R: {0}'}" VerticalTextAlignment="Center"/>
-                                    <Label Text="{Binding BucketRate, StringFormat='BT R: {0}'}" VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding BreakerRate, StringFormat='BR R: {0}'}" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding BucketRate, StringFormat='BT R: {0}'}" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding BattaAmount, StringFormat='BA R: {0}'}" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
                                 </StackLayout>                                
-                                <Label Text="{Binding BattaAmount}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="4"/>
-                                <Label Text="{Binding Total}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="5"/>
+                                
+                                <Label Text="{Binding Total}" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="4"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
@@ -63,7 +61,7 @@
         </StackLayout>
        
     </ContentPage>
-    <ContentPage Title="Payment History">
+    <ContentPage Title="Payment History" Padding="10">
         <StackLayout>
             <Label x:Name="balanceLabel" FontAttributes="Bold" FontSize="Large"/>
             <Grid BackgroundColor="LightGray" Padding="5,10" HeightRequest="100">
@@ -79,7 +77,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid>
+                            <Grid Padding="5,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>

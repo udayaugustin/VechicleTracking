@@ -37,5 +37,9 @@
         <Style TargetType="ContentPage">
             <Setter Property="Padding" Value="10"/>            
         </Style>
+
+        <Style TargetType="ListView">
+            <Setter Property="HasUnevenRows" Value="True"/>            
+        </Style>
     </Application.Resources>
 </Application>

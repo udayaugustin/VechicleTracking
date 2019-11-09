@@ -13,7 +13,7 @@
                         <MenuItem Text="Delete" Clicked="Delete_clicked"></MenuItem>
                     </ViewCell.ContextActions>
                 
-                <Grid Padding="10,0,0,0" RowSpacing="0">
+                <Grid Padding="10,5" RowSpacing="5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>

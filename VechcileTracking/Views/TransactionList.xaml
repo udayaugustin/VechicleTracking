@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
-             x:Class="VechcileTracking.Views.TransactionList">
+             x:Class="VechcileTracking.Views.TransactionList" Padding="10">
     <NavigationPage.TitleView>
         <Label Text="Site Work List" Style="{StaticResource NavigationTitle}"/>
     </NavigationPage.TitleView>
     <StackLayout Orientation="Vertical" Spacing="10">
         <Picker Title="Choose Customer" SelectedIndexChanged="CustomerSelector_SelectedIndexChanged" x:Name="CustomerSelector"/>
-        <Grid x:Name="headerGrid" IsVisible="False" BackgroundColor="LightGray" Padding="5,10" HeightRequest="100">
+        <Grid x:Name="headerGrid" IsVisible="False" BackgroundColor="LightGray" Padding="5,10" HeightRequest="76">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -31,7 +31,7 @@
                             <MenuItem Text="Edit" Clicked="Edit_Clicked"/>
                             <MenuItem Text="Delete" Clicked="Delete_Clicked"/>
                         </ViewCell.ContextActions>
-                        <Grid>
+                        <Grid Padding="5,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
