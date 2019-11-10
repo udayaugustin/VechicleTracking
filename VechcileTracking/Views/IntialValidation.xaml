@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VechcileTracking.Views.InitialValidation">
+    <ContentPage.Content>
+        <ActivityIndicator HorizontalOptions="Center" IsRunning="True" VerticalOptions="Center" WidthRequest="80" HeightRequest="80"/>
+    </ContentPage.Content>
+</ContentPage>

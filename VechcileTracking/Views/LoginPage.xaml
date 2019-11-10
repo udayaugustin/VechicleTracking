@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VechcileTracking.Views.LoginPage" Title="Login">
+    <StackLayout Margin="10,90, 10, 0"  HorizontalOptions="Fill" x:Name="Wrapper">
+        <Entry Placeholder="Username" Keyboard="Telephone" x:Name="Username"/>
+        <Button Text="Login" Clicked="Login"></Button>
+        <Label x:Name="ErrorLabel" TextColor="Red" HorizontalOptions="Center"/>
+    </StackLayout>
+</ContentPage>

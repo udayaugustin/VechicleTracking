@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Plugin.DeviceInfo;
+using SQLite;
 using VechcileTracking.Models;
+using VechcileTracking.Services;
 using VechcileTracking.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -8,31 +12,29 @@ namespace VechcileTracking
 {
     public partial class App : Application
     {
+        SQLiteAsyncConnection connection;
+
         public App()
         {
-            InitializeComponent();
+            InitializeComponent();            
 
-            //MainPage = new NavigationPage(new Reports());
-
-            var detailPage = new NavigationPage(new Reports());
-            MainPage = new MyMasterDetailPage();
-
-            var masterPage = MainPage as MasterDetailPage;
-            masterPage.Detail = detailPage;            
+            MainPage = new InitialValidation();            
         }
 
-        protected override void OnStart()
+        protected override async void OnStart()
         {
             // Handle when your app starts
+            connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            await connection.CreateTableAsync<AppInfo>();
+            await connection.CreateTableAsync<Customer>();
+            await connection.CreateTableAsync<Transaction>();
+            await connection.CreateTableAsync<PaymentInfo>();
+            await connection.CreateTableAsync<Vechicle>();
+            await connection.CreateTableAsync<PaymentHistory>();
 
-            var connection = DependencyService.Get<ISQLiteDb>().GetConnection();
-            connection.CreateTableAsync<Customer>();
-            connection.CreateTableAsync<Transaction>();
-            connection.CreateTableAsync<PaymentInfo>();
-            connection.CreateTableAsync<Vechicle>();
-            connection.CreateTableAsync<PaymentHistory>();
+            //var appId = CrossDeviceInfo.Current.GenerateAppId(false, null, null);
         }
-
+              
         protected override void OnSleep()
         {
             // Handle when your app sleeps

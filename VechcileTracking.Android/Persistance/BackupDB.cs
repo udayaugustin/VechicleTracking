@@ -16,6 +16,7 @@ using VechcileTracking.Interface;
 using Xamarin.Forms;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 [assembly: Dependency(typeof(BackupDB))]
 
@@ -58,11 +59,13 @@ namespace VechcileTracking.Droid.Persistance
 
                 var status = await httpClient.PostAsync(url, content);
 
-                var r = await status.Content.ReadAsStringAsync();
+                var response = await status.Content.ReadAsStringAsync();
+                var backupResponse =  JsonConvert.DeserializeObject<BackupResponse>(response);
 
                 if (status.IsSuccessStatusCode)
                 {
-                    return true;
+                    if(backupResponse.Status == "success")
+                        return true;
                 }
             }
 
