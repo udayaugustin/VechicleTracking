@@ -21,9 +21,9 @@ namespace VechcileTracking.Views
             backupDB = DependencyService.Get<IBackupDB>();
         }
 
-        private void Sync_Clicked(object sender, EventArgs e)
+        private async void Sync_Clicked(object sender, EventArgs e)
         {
-            backupDB.SyncDB();
+            var result = await backupDB.SyncDBAsync();
         }
     }
 }
