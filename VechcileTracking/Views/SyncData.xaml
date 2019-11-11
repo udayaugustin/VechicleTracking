@@ -5,7 +5,10 @@
     <NavigationPage.TitleView>
         <Label Text="Sync Data" Style="{StaticResource NavigationTitle}"/>
     </NavigationPage.TitleView>
+    
     <StackLayout>
         <Button Text="Start Sync" Clicked="Sync_Clicked"/>
+
     </StackLayout>
+   
 </ContentPage>

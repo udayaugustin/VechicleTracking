@@ -24,6 +24,16 @@ namespace VechcileTracking.Views
         private async void Sync_Clicked(object sender, EventArgs e)
         {
             var result = await backupDB.SyncDBAsync();
+
+            if (result != true)
+            {
+               await DisplayAlert("Alert!", "Sync not completed", "Ok");
+            }
+            else
+            {
+               await DisplayAlert("Success!", "Sync the data successfully", "Ok");
+            }
         }
+    
     }
 }

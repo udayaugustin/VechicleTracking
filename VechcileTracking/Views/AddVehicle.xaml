@@ -7,7 +7,7 @@
 
     <StackLayout Orientation="Vertical">
         <Entry Placeholder="Vehcile No" x:Name="VehcileNo"/>
-        <Entry Placeholder="Owner Name" x:Name="OwnerName"/>
+        <Entry Placeholder="Owner Name" Keyboard="Text" x:Name="OwnerName"/>
         <Button Text="Add" Clicked="Add"/>
     </StackLayout>
 </ContentPage>

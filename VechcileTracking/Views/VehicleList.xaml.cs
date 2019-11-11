@@ -56,5 +56,11 @@ namespace VechcileTracking.Views
                 }
             }
         }
+
+        private void add_vehicle_Clicked(object sender, EventArgs e)
+        {
+            var mainPage = Application.Current.MainPage as MasterDetailPage;
+            mainPage.Detail = new NavigationPage(new AddVehicle());
+        }
     }
 }

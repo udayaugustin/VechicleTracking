@@ -28,6 +28,13 @@
             <Setter Property="TextColor" Value="Black"/>
         </Style>
 
+
+        <Style TargetType="Picker">
+            <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+       
+
         <Style x:Key="NavigationTitle" TargetType="Label">
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="TextColor" Value="White"/>

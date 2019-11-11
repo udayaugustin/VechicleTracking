@@ -8,7 +8,7 @@
     <StackLayout Orientation="Vertical" Spacing="10">
             <Picker Title="Choose Customer" SelectedIndexChanged="CustomerSelector_SelectedIndexChanged" x:Name="CustomerSelector"/>
 
-            <Entry Placeholder="Amount" x:Name="amountEntry" />
+        <Entry Placeholder="Amount" Keyboard="Numeric" x:Name="amountEntry" />
 
             <StackLayout Orientation="Horizontal" Spacing="15">
                 <Label Text="Balance Rs:" FontSize="Large" FontAttributes="Bold"/>

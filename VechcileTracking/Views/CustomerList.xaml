@@ -3,7 +3,12 @@
     <NavigationPage.TitleView>
             <Label Text="Customer List" Style="{StaticResource NavigationTitle}"/>
         </NavigationPage.TitleView>
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="customer.png"  
+                     Clicked="add_customer_Clicked"
+                 Order="Primary"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
     <ListView x:Name="listView">
         <ListView.ItemTemplate>
             <DataTemplate>

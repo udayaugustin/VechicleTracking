@@ -28,8 +28,6 @@ namespace VechcileTracking.Views
                 new MenuItem{ Title = "Received Cash"},
                 new MenuItem{ Title = "Balance Cash List"},
                 new MenuItem{ Title = "Reports"},
-                new MenuItem{ Title = "Add Customer"},
-                new MenuItem{ Title = "Add Vehicle"},
                 new MenuItem{ Title = "Vehicles List"},
                 new MenuItem{ Title = "Customers List"},                
                 new MenuItem{ Title = "Sync Data"},
@@ -60,14 +58,6 @@ namespace VechcileTracking.Views
 
                 case "Reports":
                     mainPage.Detail = new NavigationPage(new Reports());                    
-                    break;
-
-                case "Add Customer":
-                    mainPage.Detail = new NavigationPage(new AddCustomer());                    
-                    break;
-
-                case "Add Vehicle":
-                    mainPage.Detail = new NavigationPage(new AddVehicle());                    
                     break;
 
                 case "Vehicles List":

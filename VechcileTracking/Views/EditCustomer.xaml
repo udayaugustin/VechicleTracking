@@ -6,8 +6,8 @@
         <Label Text="Edit Customer" Style="{StaticResource NavigationTitle}"/>
     </NavigationPage.TitleView>
     <StackLayout Orientation="Vertical">
-        <Entry Placeholder="Name" x:Name="Name"/>
-        <Entry Placeholder="Phone No" x:Name="PhoneNo"/>
+        <Entry Placeholder="Name" Keyboard="Text" x:Name="Name"/>
+        <Entry Placeholder="Phone No" Keyboard="Numeric" x:Name="PhoneNo"/>
         <Button Text="Update" Clicked="Save"/>
     </StackLayout>
 </ContentPage>

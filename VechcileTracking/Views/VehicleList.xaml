@@ -3,6 +3,12 @@
     <NavigationPage.TitleView>
         <Label Text="Vehicle List" Style="{StaticResource NavigationTitle}"/>
     </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="add.png"  
+                     Clicked="add_vehicle_Clicked"
+                 Order="Primary"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
     <ListView x:Name="listView">
         <ListView.ItemTemplate>
             <DataTemplate>
