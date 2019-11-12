@@ -6,9 +6,11 @@
         <Label Text="Sync Data" Style="{StaticResource NavigationTitle}"/>
     </NavigationPage.TitleView>
     
-    <StackLayout>
-        <Button Text="Start Sync" Clicked="Sync_Clicked"/>
+    <StackLayout VerticalOptions="FillAndExpand">
 
+        
+        <Button Text="Start Sync" x:Name="sync" Clicked="Sync_Clicked"/>
+        <ActivityIndicator x:Name="indicator" VerticalOptions="CenterAndExpand"  />
     </StackLayout>
    
 </ContentPage>

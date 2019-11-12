@@ -30,7 +30,6 @@ namespace VechcileTracking.Views
                 new MenuItem{ Title = "Reports"},
                 new MenuItem{ Title = "Vehicles List"},
                 new MenuItem{ Title = "Customers List"},                
-                new MenuItem{ Title = "Sync Data"},
                 new MenuItem{ Title = "Site Work List"}
             };
 
@@ -72,11 +71,17 @@ namespace VechcileTracking.Views
                     mainPage.Detail = new NavigationPage(new TransactionList());
                     break;
 
-                case "Sync Data":
-                    mainPage.Detail = new NavigationPage(new SyncData());
-                    break;
+
             }
             mainPage.IsPresented = false;
+        }
+
+        private async void sync_Clicked(object sender, EventArgs e)
+        {
+            
+            var mainPage = Application.Current.MainPage as MasterDetailPage;
+            mainPage.Detail = new NavigationPage(new SyncData());
+
         }
     }
 }
