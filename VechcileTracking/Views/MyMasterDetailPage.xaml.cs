@@ -17,8 +17,7 @@ namespace VechcileTracking.Views
         {
             InitializeComponent();
 
-            SetupMenu();
-            mainPage = Application.Current.MainPage as MasterDetailPage;
+            SetupMenu();            
         }
 
         public void SetupMenu()
@@ -38,7 +37,8 @@ namespace VechcileTracking.Views
         }
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
-        {                                    
+        {
+            mainPage = Application.Current.MainPage as MasterDetailPage;
             var menu = e.Item as MenuItem;
             switch (menu.Title)
             {
@@ -76,7 +76,8 @@ namespace VechcileTracking.Views
         }
 
         private void Synch(object sender, EventArgs e)
-        {            
+        {
+            mainPage = Application.Current.MainPage as MasterDetailPage;
             mainPage.Detail = new NavigationPage(new SyncData());
         }
     }
