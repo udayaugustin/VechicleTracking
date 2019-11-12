@@ -4,5 +4,7 @@
         <Entry Placeholder="Username"  Keyboard="Numeric" x:Name="Username"/>
         <Button Text="Login" Clicked="Login"></Button>
         <Label x:Name="ErrorLabel" TextColor="Red" HorizontalOptions="Center"/>
+
+        <ActivityIndicator x:Name="Loader" VerticalOptions="CenterAndExpand"  />
     </StackLayout>
 </ContentPage>

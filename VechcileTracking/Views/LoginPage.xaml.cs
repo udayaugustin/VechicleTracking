@@ -35,9 +35,11 @@ namespace VechcileTracking.Views
 
         private async void Login(object sender, EventArgs e)
         {
+            Loader.IsRunning = true;
             if (!ConnectivityHelper.IsInternetAvailable)
             {
                 ErrorLabel.Text = "Please enable internet to login";
+                StopLoader();
                 return;
             }
 
@@ -49,18 +51,20 @@ namespace VechcileTracking.Views
                 if (!accountValidation.ValidateCredentials())
                 {
                     ErrorLabel.Text = "Login Failed";
+                    StopLoader();
                     return;
                 }
 
                 if (accountValidation.IsAccountExpired())
                 {
-                    ErrorLabel.Text = "Your Account Expired. Please contact support.";                    
+                    ErrorLabel.Text = "Your Account Expired. Please contact support.";
+                    StopLoader();
                     return;
                 }
 
                 if (accountValidation.IsFirstTimeLogin())
                 {
-                    await userService.GenerateAndStoreAppId(userResponse);
+                    await userService.GenerateAndStoreAppId(userResponse);                    
                     NavigateToMasterPage();
                 }
                 else
@@ -70,12 +74,14 @@ namespace VechcileTracking.Views
                         NavigateToMasterPage();
                     else
                         Application.Current.MainPage = new LicenseViolation();
-                }                      
+                }                
             }
-        }
+        }        
 
         private void NavigateToMasterPage()
         {
+            StopLoader();
+
             var mainPage = Application.Current.MainPage;
             var detailPage = new NavigationPage(new Reports());
 
@@ -83,6 +89,11 @@ namespace VechcileTracking.Views
             (mainPage as MasterDetailPage).Detail = detailPage;
 
             Application.Current.MainPage = mainPage;
-        }        
+        }
+
+        private void StopLoader()
+        {
+            Loader.IsRunning = false;
+        }
     }
 }
