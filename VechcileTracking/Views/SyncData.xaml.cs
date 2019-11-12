@@ -1,9 +1,5 @@
 ﻿using SQLite;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VechcileTracking.Interface;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -32,8 +28,10 @@ namespace VechcileTracking.Views
             }
             sync.IsEnabled = false;
             indicator.IsRunning = true;
-            var result = await backupDB.SyncDBAsync();
-
+            
+            var appInfo = await connection.Table<AppInfo>().FirstOrDefaultAsync();
+            var result = await backupDB.SyncDBAsync(appInfo.Username);
+            
             if (result != true)
             {
                 await DisplayAlert("Alert!", "Sync not completed", "Ok");

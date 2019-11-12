@@ -20,14 +20,14 @@ namespace VechcileTracking.Services
 
         public async Task<UserDetailResponse> GetUserDetail(string userName)
         {
-            var url = "http://vehicle.codevmedia.online/user/get?Mobile=" + userName;
+            var url = Constants.FetchUserDetailUrl + "?Mobile=" + userName;
             var content = await httpClient.GetStringAsync(url);
             return userResponse = JsonConvert.DeserializeObject<UserDetailResponse>(content);
         }
 
         public async Task<bool> UpdateUserDetail(UserUpdate userUpdate)
         {
-            var url = "http://vehicle.codevmedia.online/user/update";
+            var url = Constants.UpdateUserDetailUrl;
             var content = JsonConvert.SerializeObject(userUpdate);
             var response = await httpClient.PostAsync(url, new StringContent(content));
 
