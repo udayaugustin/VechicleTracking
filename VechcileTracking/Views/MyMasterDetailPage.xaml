@@ -2,7 +2,7 @@
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VechcileTracking.Views.MyMasterDetailPage" xmlns:pages="clr-namespace:VechcileTracking.Views"
                   xmlns:local="clr-namespace:VechcileTracking.Views">
     <MasterDetailPage.ToolbarItems>
-        <ToolbarItem IconImageSource="sync.png" Clicked="sync_Clicked" Order="Primary"/>
+        <ToolbarItem IconImageSource="sync.png" Clicked="Synch" Order="Primary"/>
     </MasterDetailPage.ToolbarItems>
     <MasterDetailPage.Master>
         <ContentPage Title="Panel" Padding="0">

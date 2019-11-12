@@ -75,7 +75,7 @@ namespace VechcileTracking.Views
             mainPage.IsPresented = false;
         }
 
-        private void sync_Clicked(object sender, EventArgs e)
+        private void Synch(object sender, EventArgs e)
         {            
             mainPage.Detail = new NavigationPage(new SyncData());
         }
