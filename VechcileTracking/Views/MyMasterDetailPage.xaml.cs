@@ -69,8 +69,6 @@ namespace VechcileTracking.Views
                 case "Site Work List":
                     mainPage.Detail = new NavigationPage(new TransactionList());
                     break;
-
-
             }
             mainPage.IsPresented = false;
         }
