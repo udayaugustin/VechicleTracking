@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:VechcileTracking"
              x:Class="VechcileTracking.Views.EditVehicle" Padding="20">
     <NavigationPage.TitleView>
         <Label Text="Edit Vehicle" Style="{StaticResource NavigationTitle}"/>
     </NavigationPage.TitleView>
     <StackLayout Orientation="Vertical">
-        <Entry Placeholder="Vehcile No" x:Name="VehcileNo"/>
-        <Entry Placeholder="Owner Name" Keyboard="Text" x:Name="OwnerName"/>
+        <custom:CustomEntry Placeholder="Vehcile No" x:Name="VehcileNo"/>
+        <custom:CustomEntry Placeholder="Owner Name" Keyboard="Text" x:Name="OwnerName"/>
         <Button Text="Update" Clicked="Update"/>
     </StackLayout>
 </ContentPage>

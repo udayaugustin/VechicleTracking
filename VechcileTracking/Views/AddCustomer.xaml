@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VechcileTracking.Views.AddCustomer"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:VechcileTracking" x:Class="VechcileTracking.Views.AddCustomer"
               Padding="20">
     <NavigationPage.TitleView>
         <Label Text="Add Customer" Style="{StaticResource NavigationTitle}"/>
     </NavigationPage.TitleView>
 
     <StackLayout Orientation="Vertical">
-        <Entry Placeholder="Name" Keyboard="Text" x:Name="Name"/>
-        <Entry Placeholder="Phone No" Keyboard="Numeric" x:Name="PhoneNo"/>
+        <custom:CustomEntry Placeholder="Name" Keyboard="Text" x:Name="Name"/>
+        <custom:CustomEntry Placeholder="Phone No" Keyboard="Numeric" x:Name="PhoneNo"/>
         <Button Text="Add" Clicked="Add"/>
     </StackLayout>
 </ContentPage>

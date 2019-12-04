@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:VechcileTracking"
              x:Class="VechcileTracking.Views.EditTransaction">
     <NavigationPage.TitleView>
         <Label Text="Edit Transaction" Style="{StaticResource NavigationTitle}"/>
@@ -11,21 +12,21 @@
 
         <Picker Title="Choose Customer" x:Name="CustomerSelector" SelectedIndexChanged="CustomerSelector_SelectedIndexChanged"/>
 
-        <Entry Placeholder="Work Place" Keyboard="Text"  x:Name="WorkPlace"/>
+        <custom:CustomEntry Placeholder="Work Place" Keyboard="Text"  x:Name="WorkPlace"/>
         <DatePicker x:Name="rentDate"/>
         <StackLayout Orientation="Horizontal" Spacing="15">
             <Label VerticalOptions="Center" Text="Bucket"></Label>
-            <Entry VerticalOptions="Center" Placeholder="Hours" Keyboard="Numeric" x:Name="BucketHours"/>
-            <Entry VerticalOptions="Center" Placeholder="Rate" Keyboard="Numeric" x:Name="BucketRate"/>
+            <custom:CustomEntry VerticalOptions="Center" Placeholder="Hours" Keyboard="Numeric" x:Name="BucketHours"/>
+            <custom:CustomEntry VerticalOptions="Center" Placeholder="Rate" Keyboard="Numeric" x:Name="BucketRate"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" Spacing="15">
             <Label VerticalOptions="Center" Text="Breaker"></Label>
-            <Entry VerticalOptions="Center" Placeholder="Hours" Keyboard="Numeric" x:Name="BreakerHours"/>
-            <Entry VerticalOptions="Center" Placeholder="Rate" Keyboard="Numeric" x:Name="BreakerRate"/>
+            <custom:CustomEntry VerticalOptions="Center" Placeholder="Hours" Keyboard="Numeric" x:Name="BreakerHours"/>
+            <custom:CustomEntry VerticalOptions="Center" Placeholder="Rate" Keyboard="Numeric" x:Name="BreakerRate"/>
         </StackLayout>
 
-        <Entry Placeholder="Batta Amount" Keyboard="Numeric" x:Name="BattaAmount" />
+        <custom:CustomEntry Placeholder="Batta Amount" Keyboard="Numeric" x:Name="BattaAmount" />
 
         <Button Text="Update" Clicked="Save"/>
     </StackLayout>
